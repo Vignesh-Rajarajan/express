@@ -14,7 +14,7 @@ var middleWare={
 
 app.use(middleWare.logger);
 app.get('/',middleWare.requireAuth,function(req,res){
-	res.send('Hello Express');
+	res.send('Hello Express,,,');
 });
 
 app.get('/about',middleWare.requireAuth,function(req,res){
