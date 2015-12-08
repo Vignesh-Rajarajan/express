@@ -1,17 +1,7 @@
 var express= require('express');
 var app=express();
 
-var middleWare={
-	requireAuth:function(req,res,next){
-          console.log('message');
-          next();
-	},
-	logger:function(req,res,next){
-		console.log(req.method);
-		next();
-	}
-}
-
+var middleWare=require('./middleware/middleware.js');
 app.use(middleWare.logger);
 app.get('/',middleWare.requireAuth,function(req,res){
 	res.send('Hello Express,,,');
