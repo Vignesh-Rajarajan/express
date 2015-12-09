@@ -1,6 +1,6 @@
 var express= require('express');
 var app=express();
-
+var port=process.env.PORT||3000;
 var middleWare=require('./middleware/middleware.js');
 app.use(middleWare.logger);
 app.get('/',middleWare.requireAuth,function(req,res){
@@ -15,4 +15,4 @@ app.use(express.static(__dirname+'/public'));
 
 
 
-app.listen(3000);
+app.listen(port);
